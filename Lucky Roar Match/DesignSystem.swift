@@ -19,10 +19,60 @@ extension Color {
     static let lightGold = Color(red: 1.0, green: 0.95, blue: 0.7)
     static let cardBack = Color(red: 0.95, green: 0.85, blue: 0.4)
     
+    // Additional Colors for Splash/Onboarding
+    static let mainGold = luckyGold
+    static let mainYellow = Color(red: 1.0, green: 1.0, blue: 0.0) // #FFFF00
+    static let darkNavy = Color(red: 0.05, green: 0.1, blue: 0.2) // Dark navy
+    static let mainGreen = Color(red: 0.2, green: 0.55, blue: 0.13) // #228B22
+    
     // Theme Variants
     static let nightTheme = Color(red: 0.1, green: 0.1, blue: 0.2)
     static let dayTheme = Color.white
     static let goldenGlow = Color.luckyGold.opacity(0.1)
+    
+    // Hex color initializer
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int: UInt64 = 0
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (1, 1, 1, 0)
+        }
+        
+        self.init(
+            .sRGB,
+            red: Double(r) / 255,
+            green: Double(g) / 255,
+            blue:  Double(b) / 255,
+            opacity: Double(a) / 255
+        )
+    }
+    
+    // Accent gradient for text
+    static var accentGradient: LinearGradient {
+        LinearGradient(
+            colors: [luckyGold, warmOrange],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
+    
+    // Soft success gradient
+    static var softSuccessGradient: LinearGradient {
+        LinearGradient(
+            colors: [mainGreen, Color(red: 0.2, green: 0.7, blue: 0.3)],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
 }
 
 // MARK: - Gradients
@@ -60,6 +110,16 @@ struct LuckyFontStyle {
     static let headlineFallback = Font.system(size: 22, weight: .semibold, design: .default)
     static let bodyFallback = Font.system(size: 17, weight: .regular, design: .default)
     static let captionFallback = Font.system(size: 14, weight: .light, design: .default)
+}
+
+// MARK: - Font Extensions
+extension Font {
+    static let gameLogoMedium = LuckyFontStyle.largeTitle
+    static let gameTitle = LuckyFontStyle.title
+    static let gameButton = LuckyFontStyle.headline
+    static let gameSubtitle = LuckyFontStyle.body
+    static let gameCaption = LuckyFontStyle.caption
+    static let gameDescription = LuckyFontStyle.body
 }
 
 // MARK: - UI Components

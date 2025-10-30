@@ -24,7 +24,7 @@ class SoundManager: ObservableObject {
             try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
-            print("Failed to set up audio session: \(error)")
+            // Silent error handling
         }
     }
     
