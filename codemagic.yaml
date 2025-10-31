@@ -6,7 +6,7 @@ workflows:
           - app_store_credentials
         vars:
           XCODE_WORKSPACE: "RoarMatch.xcworkspace"
-          XCODE_SCHEME: "RoarMatch"
+          XCODE_SCHEME: "Roar Match"
           BUNDLE_ID: "com.developer.roarmatch"
           APP_STORE_APP_ID: 6753032295
         xcode: latest
