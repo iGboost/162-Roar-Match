@@ -20,7 +20,6 @@
 		2B36021E2EB3874E006C97E8 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2B36021D2EB3874E006C97E8 /* FirebaseRemoteConfig */; };
 		2B3602202EB38831006C97E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B36021F2EB38831006C97E8 /* GoogleService-Info.plist */; };
 		2BB7ABA42E866908000D2177 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 2BB7ABA32E866908000D2177 /* codemagic.yaml */; };
-		7D4DF7CD3BA287CD25028A61 /* Pods_Roar_Match.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4805D2CA232E52DBA646AFA /* Pods_Roar_Match.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		2BB7ABA32E866908000D2177 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 		5FA3BDFE4A15C6CD5E0FFAD6 /* Pods-Roar Match.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roar Match.debug.xcconfig"; path = "Target Support Files/Pods-Roar Match/Pods-Roar Match.debug.xcconfig"; sourceTree = "<group>"; };
 		891FD3F1414516F5DEB60C54 /* Pods-Roar Match.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roar Match.release.xcconfig"; path = "Target Support Files/Pods-Roar Match/Pods-Roar Match.release.xcconfig"; sourceTree = "<group>"; };
-		C4805D2CA232E52DBA646AFA /* Pods_Roar_Match.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roar_Match.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,7 +50,6 @@
 				2B36021C2EB3874E006C97E8 /* FirebaseMessaging in Frameworks */,
 				2B36020F2EB38683006C97E8 /* SdkPushExpress in Frameworks */,
 				2B3602162EB3874E006C97E8 /* FirebaseCore in Frameworks */,
-				7D4DF7CD3BA287CD25028A61 /* Pods_Roar_Match.framework in Frameworks */,
 				2B3602182EB3874E006C97E8 /* FirebaseCrashlytics in Frameworks */,
 				2B3602122EB3874E006C97E8 /* FirebaseAnalytics in Frameworks */,
 				2B3602142EB3874E006C97E8 /* FirebaseAuth in Frameworks */,
@@ -89,7 +86,6 @@
 		533F331A3DCF696ECEC3EF3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C4805D2CA232E52DBA646AFA /* Pods_Roar_Match.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

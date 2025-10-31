@@ -22,7 +22,7 @@ struct Lucky_Roar_MatchApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ZStack {
+            Group {
                 if showSplash {
                     SplashScreenView {
                         withAnimation(.easeInOut(duration: 0.5)) {
@@ -32,6 +32,7 @@ struct Lucky_Roar_MatchApp: App {
                         }
                     }
                     .transition(.opacity)
+                    .ignoresSafeArea(.all)
                 } else if showOnboarding {
                     OnboardingView {
                         withAnimation(.easeInOut(duration: 0.5)) {
@@ -39,13 +40,17 @@ struct Lucky_Roar_MatchApp: App {
                         }
                     }
                     .transition(.opacity)
+                    .ignoresSafeArea(.all)
                 } else {
                     MainTabView()
                         .preferredColorScheme(.light)
                         .statusBarHidden(false)
                         .transition(.opacity)
+                        .ignoresSafeArea(.all)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black.ignoresSafeArea())
         }
     }
 
