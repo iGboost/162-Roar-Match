@@ -33,6 +33,7 @@ workflows:
         - name: Cocoapods
           script: |
             #!/bin/sh
+            export LANG=en_US.UTF-8
             pod install
         - name: Build ipa for distribution
           script: |
